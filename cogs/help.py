@@ -12,14 +12,14 @@ class HelpCog(commands.Cog, name="❓ Hướng dẫn"):
         if is_admin:
             help_text = """
 💸 **Nộp quỹ:**
-• `!nopquy <số_lượng> <vật phẩm>` – (Chỉ thủ quỹ) Ghi nhận số lượng nộp quỹ và lưu nội dung.
-• `!rutquy @user` <số lượng> <vật phẩm> – (Chỉ thủ quỹ) Xoá quỹ nộp của cá nhân theo vật phẩm hoặc toàn bộ.
+• `!nopquy @ten <số_lượng> <vật phẩm>` – (Chỉ thủ quỹ) Ghi nhận số lượng nộp quỹ và lưu nội dung.
+• `!rutquy @ten` <số lượng> <vật phẩm> – (Chỉ thủ quỹ) Xoá quỹ nộp của cá nhân theo vật phẩm hoặc toàn bộ.
 
 🕒 **Cài đặt thời gian:**
-• `!settime Giờ:Phút <nội dung>` – (Chỉ bang chủ và phó bang) Chỉnh thời gian sự kiện sẽ thông báo trong ngày
+• `!settime Giờ:Phút <nội dung>` – (Chỉ bang chủ và phó bang) Chỉnh thời gian sự kiện sẽ thông báo trong ngày.
 
 📊 **Thống kê :**
-• `!xemquy` – Hiển thị tổng số lượt nộp quỹ của tất cả mọi người hoặc của bạn.
+• `!xemquy` @ten hoặc `!xemquy` – Hiển thị tổng số lượt nộp quỹ của người nào đó hoặc của bạtất cả trong ngày.
 
 🛠️ **Báo lỗi Bot:**
 • `!baoloi <nội dung lỗi>` – Gửi báo cáo lỗi tới quản trị viên, tự động tạo kênh xử lý riêng.

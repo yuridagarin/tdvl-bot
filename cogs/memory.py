@@ -4,6 +4,7 @@ import datetime
 # Lưu tin nhắn dạng: { "dd-mm-yyyy": [msg1, msg2] }
 saved_messages = {}
 nopquy_data = {}
+xoaquy_counter = {} 
 # Ghi nhớ ngày hiện tại của mỗi người dùng: { user_id: "dd-mm-yyyy" }
 user_current_day = {}
 

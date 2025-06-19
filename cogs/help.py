@@ -16,7 +16,7 @@ class HelpCog(commands.Cog, name="❓ Hướng dẫn"):
 • `!rutquy @user` <số lượng> <vật phẩm> – (Chỉ thủ quỹ) Xoá quỹ nộp của cá nhân theo vật phẩm hoặc toàn bộ.
 
 🕒 **Cài đặt thời gian:**
-• `!settime Giờ:Phút <nội dung>` – (Chỉ thủ quỹ) Chỉnh thời gian sự kiện sẽ thông báo trong ngày
+• `!settime Giờ:Phút <nội dung>` – (Chỉ bang chủ và phó bang) Chỉnh thời gian sự kiện sẽ thông báo trong ngày
 
 📊 **Thống kê :**
 • `!xemquy` – Hiển thị tổng số lượt nộp quỹ của tất cả mọi người hoặc của bạn.

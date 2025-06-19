@@ -14,7 +14,7 @@ class AutoNotify(commands.Cog):
             {"hour": 19, "minute": 55, "message":"⚔️ Biên cương báo về chiến trường chỉ còn 5 phút nữa là đã mở, các anh hùng hảo hán hãy cùng nguyên soái tham gia để bảo vệ phe phái của mình đi nào !!!"},
         ]
 
-        self.channel_id = 1384950187016847490  
+        self.channel_id = 1385296312857137164  
         self.last_sent_times = set()
         self.check_time.start()
 

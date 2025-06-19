@@ -19,5 +19,5 @@ async def main():
     await bot.load_extension("cogs.notify_auto")
     await bot.load_extension("cogs.logquy")
     await bot.load_extension("cogs.baoloi")
-    await bot.start(config.TOKEN)  
+    #await bot.start(config.TOKEN)  
 asyncio.run(main())

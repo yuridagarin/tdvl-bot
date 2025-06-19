@@ -32,13 +32,13 @@ class NopQuyCog(commands.Cog, name="💸 Nộp quỹ"):
         user_id = str(target_user.id)
         day = datetime.datetime.now().strftime("%d-%m-%Y")
 
-        # Đảm bảo dữ liệu tạm trong bộ nhớ
+
         if day not in nopquy_data:
             nopquy_data[day] = {}
         if user_id not in nopquy_data[day]:
             nopquy_data[day][user_id] = []
 
-        # Tạo ID mới nếu chưa tồn tại dòng phù hợp trong file
+
         file_dir = "data_quy"
         os.makedirs(file_dir, exist_ok=True)
         file_path = os.path.join(file_dir, f"{day}.txt")
@@ -71,7 +71,7 @@ class NopQuyCog(commands.Cog, name="💸 Nộp quỹ"):
         with open(file_path, "w", encoding="utf-8") as f:
             f.writelines(lines)
 
-        # Lưu vào bộ nhớ tạm
+
         entry = {
             "id": existing_id,
             "amount": amount,
@@ -87,7 +87,7 @@ class NopQuyCog(commands.Cog, name="💸 Nộp quỹ"):
 
         saved_messages[day][user_id].append(f"Nộp quỹ [{existing_id}]: {amount} {item_name}")
 
-        # Tính tổng cho thông báo
+
         totals = defaultdict(int)
         for entry in nopquy_data[day][user_id]:
             totals[entry["item"]] += entry["amount"]
@@ -98,7 +98,7 @@ class NopQuyCog(commands.Cog, name="💸 Nộp quỹ"):
             f"📦 Tổng đã nộp trong ngày:\n{total_lines}"
         )
 
-    @commands.command(name="xoaquy", help="Xoá vật phẩm đã nộp quỹ của người dùng. Dùng: !xoaquy @user [số lượng] [vật phẩm]")
+    @commands.command(name="xoaquy")
     async def delete_nopquy(self, ctx, member: discord.Member, *, content: str = None):
         user_id = str(member.id)
         user_name = member.display_name
@@ -111,7 +111,7 @@ class NopQuyCog(commands.Cog, name="💸 Nộp quỹ"):
         entries = nopquy_data[day][user_id]
 
         if not content:
-            # Xoá toàn bộ
+
             del nopquy_data[day][user_id]
             if day in saved_messages and user_id in saved_messages[day]:
                 del saved_messages[day][user_id]
@@ -136,7 +136,7 @@ class NopQuyCog(commands.Cog, name="💸 Nộp quỹ"):
                 if entry["amount"] <= remaining:
                     removed += entry["amount"]
                     removed_ids.append(entry["id"])
-                    continue  # bỏ qua dòng này (xoá hoàn toàn)
+                    continue 
                 else:
                     entry["amount"] -= remaining
                     removed += remaining
@@ -149,13 +149,13 @@ class NopQuyCog(commands.Cog, name="💸 Nộp quỹ"):
             await ctx.send(f"⚠️ Không tìm thấy vật phẩm `{item_name}` hoặc không đủ số lượng.")
             return
 
-        # ✅ Cập nhật dữ liệu tạm
+
         nopquy_data[day][user_id] = new_entries
         saved_messages[day][user_id] = [
             f"Nộp quỹ [{e['id']}]: {e['amount']} {e['item']}" for e in new_entries
         ]
 
-        # ✅ Ghi lại toàn bộ file txt
+
         file_dir = "data_quy"
         file_path = os.path.join(file_dir, f"{day}.txt")
         lines = []

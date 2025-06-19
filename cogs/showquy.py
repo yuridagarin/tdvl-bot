@@ -7,9 +7,8 @@ class ShowQuyCog(commands.Cog, name="📊 Thống kê Quỹ"):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="xemquy", help="Xem tổng hợp hoặc chi tiết nộp quỹ của một người (theo ID)")
+    @commands.command(name="xemquy")
     async def show_quy(self, ctx, member: discord.Member = None):
-        # Nếu không có dữ liệu
         if not nopquy_data:
             await ctx.send("⚠️ Không có dữ liệu nộp quỹ.")
             return

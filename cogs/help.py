@@ -11,7 +11,7 @@ class HelpCog(commands.Cog, name="❓ Hướng dẫn"):
 
         if is_admin:
             help_text = """
-💸 **Nộp quỹ (NopQuy):**
+💸 **Nộp quỹ:**
 • `!nopquy <số_lượng> <vật phẩm>` – (Chỉ thủ quỹ) Ghi nhận số lượng nộp quỹ và lưu nội dung.
 • `!rutquy @user` <số lượng> <vật phẩm> – (Chỉ thủ quỹ) Xoá quỹ nộp của cá nhân theo vật phẩm hoặc toàn bộ.
 

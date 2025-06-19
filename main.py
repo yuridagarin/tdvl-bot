@@ -16,6 +16,7 @@ async def main():
     await bot.load_extension("cogs.nopquy")
     await bot.load_extension("cogs.help")
     await bot.load_extension("cogs.showquy")
+    await bot.load_extension("cogs.notify_auto")
     await bot.start(config.TOKEN)  
 print(f"DEBUG TOKEN: {config.TOKEN}")
 asyncio.run(main())

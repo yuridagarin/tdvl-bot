@@ -7,19 +7,19 @@ class HelpCog(commands.Cog, name="❓ Hướng dẫn"):
 
     @commands.command(name="huongdan", help="Hiển thị hướng dẫn sử dụng bot theo từng chức năng")
     async def guide(self, ctx):
-        is_admin = discord.utils.get(ctx.author.roles, name="Thủ quỹ")
+        is_admin = discord.utils.get(ctx.author.roles, name="Quản trị viên")
 
         if is_admin:
             help_text = """
 💸 **Nộp quỹ:**
-• `!nopquy @ten <số_lượng> <vật phẩm>` – (Chỉ thủ quỹ) Ghi nhận số lượng nộp quỹ và lưu nội dung.
-• `!rutquy @ten` <số lượng> <vật phẩm> – (Chỉ thủ quỹ) Xoá quỹ nộp của cá nhân theo vật phẩm hoặc toàn bộ.
+• `!nopquy @ten <số_lượng> <vật phẩm>` – (Chỉ quản trị viên) Ghi nhận số lượng nộp quỹ và lưu nội dung.
+• `!rutquy @ten` <số lượng> <vật phẩm> – (Chỉ quản trị viên) Xoá quỹ nộp của cá nhân theo vật phẩm hoặc toàn bộ.
 
 🕒 **Cài đặt thời gian:**
-• `!settime Giờ:Phút <nội dung>` – (Chỉ bang chủ và phó bang) Chỉnh thời gian sự kiện sẽ thông báo trong ngày.
+• `!settime Giờ:Phút <nội dung>` – (Chỉ quản trị viên) Chỉnh thời gian sự kiện sẽ thông báo trong ngày.
 
 📊 **Thống kê :**
-• `!xemquy` @ten hoặc `!xemquy` – Hiển thị tổng số lượt nộp quỹ của người nào đó hoặc của bạtất cả trong ngày.
+• `!xemquy` @ten hoặc `!xemquy` – Hiển thị tổng số lượt nộp quỹ của người nào đó hoặc của bạn.
 
 🛠️ **Báo lỗi Bot:**
 • `!baoloi <nội dung lỗi>` – Gửi báo cáo lỗi tới quản trị viên, tự động tạo kênh xử lý riêng.

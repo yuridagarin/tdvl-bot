@@ -14,5 +14,5 @@ class CheckTime(commands.Cog):
         embed = discord.Embed(title="🕒 Thời gian hiện tại", description=f"`{time_str}`", color=discord.Color.blue())
         await ctx.send(embed=embed)
 
-def setup(bot):
-    bot.add_cog(CheckTime(bot))
+async def setup(bot):
+    await bot.add_cog(CheckTime(bot))
